@@ -43,16 +43,14 @@ class S3RenameUpload extends RenameUpload
     );
 
     /**
-     * @param S3Client $client
-     * @param array    $options
+     * We need to register the S3 stream wrapper so that we can take advantage of the base class
+     * @param S3Client $clent
      */
-    public function __construct(S3Client $client, $options = array())
+    public function setClient(S3Client $client)
     {
-        parent::__construct($options);
-
-        // We need to register the S3 stream wrapper so that we can take advantage of the base class
         $this->client = $client;
         $this->client->registerStreamWrapper();
+        return $this;
     }
 
     /**

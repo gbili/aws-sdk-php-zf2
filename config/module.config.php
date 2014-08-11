@@ -9,8 +9,8 @@ return array(
     ),
 
     'filters' => array(
-        'factories' => array(
-            'Aws\Filter\File\S3RenameUpload' => 'Aws\Factory\S3RenameUploadFactory'
+        'invokables' => array(
+            'Aws\Filter\File\S3RenameUpload' => 'Aws\Filter\File\S3RenameUpload'
         ),
         'aliases' => array(
             's3renameupload' => 'Aws\Filter\File\S3RenameUpload'
